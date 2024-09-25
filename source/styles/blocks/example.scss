@@ -1,0 +1,229 @@
+.example {
+  background-color: $example-background-color;
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    background-image: linear-gradient(to top, $example-background-color 462px, $light-background-color 462px);
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: linear-gradient(to top, $darker-background-color 462px, $light-background-color 462px);
+  }
+}
+
+//Полоска в планшетной версии между features и example
+@media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+  .example::before {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 1px;
+    background-color: $example-border-color;
+    content: "";
+  }
+}
+
+.example__wrapper {
+  width: 280px;
+  margin: 0 auto;
+  padding: 25px 0 40px;
+
+  @media (min-width: $tablet-width) {
+    width: 708px;
+    padding: 45px 0 100px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1220px;
+    padding: 70px 0 21px;
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+.example__title {
+  margin: 0 0 40px;
+  font-family: $header-primary-font;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  color: $header-primary-color;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 60px;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0 0 76px;
+  }
+}
+
+.example__agenda {
+  margin: 0 0 20px;
+  width: 280px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 55px;
+    width: 708px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 70px 0 0;
+    width: 450px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+
+.example__parameters-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.example__list {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 0 0 20px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: left;
+    gap: 43px;
+    margin: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 69px 0 0;
+  }
+}
+
+.example__item {
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.example__number {
+  display: block;
+  box-sizing: border-box;
+  font-family: $header-primary-font;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $header-primary-color;
+  width: 124px;
+  border: 1px solid $extra-line-color;
+  border-radius: 3px;
+  padding: 14px 14px 17px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 27px;
+    width: 162px;
+    padding: 15px 15px 20px;
+  }
+}
+
+.example__description {
+  display: block;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 12px;
+  width: 87px;
+  margin: -9px 4px 0;
+  padding: 0 5px;
+  text-align: center;
+  order: 2;
+  background-color: $example-background-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 14px;
+    width: 135px;
+    background-color: $light-background-color;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-color: $darker-background-color;
+  }
+}
+
+.example__price {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-family: $header-primary-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $header-primary-color;
+  margin: 0 0 20px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: column;
+    font-size: 20px;
+    margin: 10px 0 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    margin: 46px auto 0 0;
+    min-width: 327px;
+  }
+}
+
+.example__price-number {
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    margin-left: auto;
+  }
+}
+
+.example__price-description {
+  margin: 0;
+}
+
+.example__slider {
+  width: 280px;
+
+  @media (min-width: $tablet-width) {
+    width: 560px;
+    margin: 90px auto 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 2/3;
+    grid-row: 1/-1;
+    margin: 0;
+  }
+}

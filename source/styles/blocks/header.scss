@@ -1,5 +1,40 @@
-.header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+.main-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 25px 0;
+    width: 704px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 55px 0 0;
+    width: 1220px;
+  }
+}
+
+.main-header__logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 190px;
+  margin: 0 0 15px 20px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: flex-start;
+    gap: 14px;
+    margin: 0;
+  }
+}
+
+.main-header__logo:hover {
+  opacity: 0.8;
+}
+
+.main-header__logo:active {
+  opacity: 0.5;
 }

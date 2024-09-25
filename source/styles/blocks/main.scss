@@ -1,0 +1,52 @@
+.main-container__title {
+  font-family: $header-primary-font;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  color: $header-primary-color;
+  width: 280px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+    width: 708px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1220px;
+  }
+}
+
+.main-container--catalog .main-container__title {
+  padding: 27px 0 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 65px 0 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 74px 0 0;
+  }
+}
+
+//Разделитель между меню и заголовком в каталоге в мобильной версии.
+.main-container__title::before {
+  display: block;
+  content: "";
+  height: 1px;
+  background-color: $divider-line-color;
+  z-index: -1;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: -50vw;
+  box-shadow: 100vw 0 0 $divider-line-color;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}

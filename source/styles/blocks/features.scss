@@ -1,0 +1,124 @@
+.features {
+  width: 280px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: 708px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1220px;
+  }
+}
+
+.features__title {
+  font-family: $header-primary-font;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  color: $header-primary-color;
+  margin: 10px 0 40px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+    margin: 15px 0 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 71px 0 32px;
+  }
+}
+
+.features__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 37px 0;
+    max-width: 630px;
+    counter-reset: feature-id 0;
+    padding-bottom: 47px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 0;
+    max-width: 1224px;
+    padding: 0;
+  }
+}
+
+.features__item {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin: 0 0 24px;
+  min-width: 280px;
+
+  @media (min-width: $tablet-width) {
+    min-width: 0;
+    max-width: 240px;
+    flex-direction: column;
+    margin-bottom: 75px;
+    counter-increment: feature-id 1;
+  }
+}
+
+.features__item::before {
+  display: block;
+  flex-shrink: 0;
+  margin-right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #68b738;
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+
+  @media (min-width: $tablet-width) {
+    margin: 40px auto 31px 0;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.features__item--nutrition::before {
+  background-image: url("../../icons/stack.svg#icon-leaf");
+  background-size: 30px 32px;
+}
+
+.features__item--powder::before {
+  background-image: url("../../icons/stack.svg#icon-pot");
+  background-size: 26px 28px;
+}
+
+.features__item--eat::before {
+  background-image: url("../../icons/stack.svg#icon-eat");
+  background-size: 25px 30px;
+}
+
+.features__item--changes::before {
+  background-image: url("../../icons/stack.svg#icon-balance");
+  background-size: 26px 31px;
+}
+
+@media (min-width: $tablet-width) {
+  .features__item::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    content: counter(feature-id);
+    font-family: $header-primary-font;
+    font-weight: 400;
+    font-size: 280px;
+    line-height: 280px;
+    color: $decorative-numbers-color;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,108 @@
+.subscribe__wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  margin: 0 auto;
+  padding: 40px 0;
+
+  @media (min-width: $tablet-width) {
+    width: 708px;
+    padding: 80px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1220px;
+    padding: 96px 0;
+  }
+}
+
+.subscribe__title {
+  box-sizing: border-box;
+  position: relative;
+  align-self: flex-start;
+  font-family: $header-primary-font;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  width: fit-content;
+  color: $header-primary-color;
+  margin: 0 0 32px;
+  background-color: $light-background-color;
+  box-shadow:
+    -152px 0 0 $light-background-color,
+    40px 0 0 $light-background-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 32px;
+    line-height: 32px;
+    width: fit-content;
+    padding: 0 0 0 40px;
+    margin: 0 0 66px;
+    box-shadow: 40px 0 0 $light-background-color;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 40px;
+    line-height: 40px;
+    padding: 0;
+    margin: 0 0 72px;
+    box-shadow:
+      -40px 0 0 $light-background-color,
+      40px 0 0 $light-background-color;
+  }
+}
+
+.subscribe__title::before {
+  display: block;
+  content: "";
+  height: 2px;
+  background-color: $catalog-heading-line-color;
+  z-index: -1;
+  position: absolute;
+  width: 100vw;
+  top: 9px;
+  left: -50vw;
+  box-shadow: 100vw 0 0 $catalog-heading-line-color;
+
+  @media (min-width: $tablet-width) {
+    top: 13px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 18px;
+  }
+}
+
+.subscribe__description {
+  font-family: $header-primary-font;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  width: 280px;
+  text-align: center;
+  margin: 0 0 24px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 32px;
+    width: 632px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1360px;
+  }
+}
+
+.subscribe__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    gap: 0;
+  }
+}
